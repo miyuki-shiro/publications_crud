@@ -21,4 +21,6 @@ In the project directory, you can:
 2. Tears down the docker containers: `sudo docker-compose down`
 
 ### ✨ Main View✨
+Here is an example of what the app looks like when it runs.
+
 ![main view](./mainview.png)

@@ -1,5 +1,6 @@
 version: '3.9'
 services:
+  # Database
   postgres:
     image: postgres:13
     container_name: publication_postgres
@@ -14,6 +15,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+  # App back-end
   server:
     build: ./server
     container_name: publication_server
@@ -33,6 +35,7 @@ services:
       interval: 5s
       timeout: 3s
       retries: 3
+  # App front-end
   app:
     build: ./app
     container_name: publication_app
