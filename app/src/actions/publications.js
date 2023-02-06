@@ -43,6 +43,6 @@ export const deletePublication = (id) => async (dispatch) => {
     }
   } catch (err) {
     console.log(err);
-    dispatch({ type: 'LIST_ERROR', payload: { message: 'Could not delete publication selected' }});
+    dispatch({ type: 'LIST_ERROR', payload: { message: 'Could not delete selected publication' }});
   }
 };
