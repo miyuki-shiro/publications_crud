@@ -5,8 +5,7 @@ import { createPublication } from '../actions/publications';
 const NewPublication = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const disabledButton = name && description ? true : false;
-  console.log(disabledButton);
+  const enableButton = name && description;
 
   const error = useSelector((state) => state.error.create);
   const dispatch = useDispatch();
@@ -26,9 +25,9 @@ const NewPublication = () => {
             value={description} onChange={(event) => setDescription(event.target.value)}
           />
         </div>
-        <button className='btn btn-success' disabled={!disabledButton}
+        <button className='btn btn-success' disabled={!enableButton}
           onClick={() => {
-            if (disabledButton) {
+            if (enableButton) {
               dispatch(createPublication(name, description));
               setName(''); setDescription('');
             }
